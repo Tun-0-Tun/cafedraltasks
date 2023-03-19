@@ -1,4 +1,4 @@
-# Scrapy settings for product_scraper project
+# Scrapy settings for news project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,16 +7,16 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'product_scraper'
+BOT_NAME = 'news'
 
-SPIDER_MODULES = ['product_scraper.spiders']
-NEWSPIDER_MODULE = 'product_scraper.spiders'
+SPIDER_MODULES = ['news.spiders']
+NEWSPIDER_MODULE = 'news.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-# USER_AGENT = 'product_scraper (+http://www.yourdomain.com)'
+# USER_AGENT = 'news (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = False
+#ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 # CONCURRENT_REQUESTS = 32
@@ -44,13 +44,13 @@ ROBOTSTXT_OBEY = False
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 # SPIDER_MIDDLEWARES = {
-#    'product_scraper.middlewares.ProductScraperSpiderMiddleware': 543,
+#    'news.middlewares.NewsSpiderMiddleware': 543,
 # }
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 # DOWNLOADER_MIDDLEWARES = {
-#    'product_scraper.middlewares.ProductScraperDownloaderMiddleware': 543,
+#    'news.middlewares.NewsDownloaderMiddleware': 543,
 # }
 
 # Enable or disable extensions
@@ -62,7 +62,7 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 # ITEM_PIPELINES = {
-#    'product_scraper.pipelines.ProductScraperPipeline': 300,
+#    'news.pipelines.NewsPipeline': 300,
 # }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -85,9 +85,8 @@ ROBOTSTXT_OBEY = False
 # HTTPCACHE_DIR = 'httpcache'
 # HTTPCACHE_IGNORE_HTTP_CODES = []
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
-LOG_LEVEL = 'INFO'
-FEED_EXPORT_ENCODING = "utf-8"
 
+# Splash Server Endpoint
 SPLASH_URL = 'http://localhost:8050'
 
 
@@ -105,3 +104,6 @@ SPIDER_MIDDLEWARES = {
 
 # Define the Splash DupeFilter
 DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
+
+LOG_LEVEL = 'INFO'
+FEED_EXPORT_ENCODING = "utf-8"
